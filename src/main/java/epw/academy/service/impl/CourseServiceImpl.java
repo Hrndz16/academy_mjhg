@@ -53,7 +53,8 @@ public class CourseServiceImpl implements CourseService {
                 course.getName(),
                 course.getDescription(),
                 course.getDurationHours(),
-                course.getInstructor().getId()
+                course.getInstructor().getId(),
+                course.getInstructor().getName()
         );
     }
 }
