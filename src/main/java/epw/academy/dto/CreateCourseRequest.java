@@ -21,4 +21,7 @@ public class CreateCourseRequest {
     @NotNull
     @Min(1)
     private Integer durationHours;
+
+    @NotNull
+    private Long instructorId;
 }

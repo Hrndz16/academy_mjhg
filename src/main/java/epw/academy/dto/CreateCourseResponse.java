@@ -15,4 +15,5 @@ public class CreateCourseResponse {
     private String name;
     private String description;
     private Integer durationHours;
+    private Long instructorId;
 }
