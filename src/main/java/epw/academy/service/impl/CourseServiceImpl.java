@@ -1,6 +1,6 @@
 package epw.academy.service.impl;
 
-import epw.academy.dto.CourseResponse;
+import epw.academy.dto.CreateCourseResponse;
 import epw.academy.dto.CreateCourseRequest;
 import epw.academy.entity.Course;
 import epw.academy.repository.CourseRepository;
@@ -19,7 +19,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public CourseResponse createCourse(CreateCourseRequest request) {
+    public CreateCourseResponse createCourse(CreateCourseRequest request) {
         Course course = new Course();
         course.setName(request.getName());
         course.setDescription(request.getDescription());
@@ -30,15 +30,15 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public List<CourseResponse> listCourses() {
+    public List<CreateCourseResponse> listCourses() {
         return courseRepository.findAll()
                 .stream()
                 .map(this::toResponse)
                 .toList();
     }
 
-    private CourseResponse toResponse(Course course) {
-        return new CourseResponse(
+    private CreateCourseResponse toResponse(Course course) {
+        return new CreateCourseResponse(
                 course.getId(),
                 course.getName(),
                 course.getDescription(),
